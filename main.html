@@ -74,7 +74,7 @@
             }
 
             greet() {
-                const message = `Hello, my name is ${this.name}, I am ${this.age} years old.`;
+                const message = `Hello, my name is ${this.name} and I am ${this.age} years old.`;
                 console.log(message);
                 return message;
             }
@@ -93,6 +93,10 @@
                 return message;
             }
         }
+
+        // Attach to window for Cypress tests
+        window.Person = Person;
+        window.Employee = Employee;
 
         // Event listener for Person form
         document.getElementById("person-form").addEventListener("submit", function(event) {
